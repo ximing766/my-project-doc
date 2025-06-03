@@ -1,7 +1,68 @@
 site_name: 我的技术文档
+site_description: "记录技术笔记、项目文档和工具指南"
+site_author: "ximing766"
+site_url: "https://ximing766.github.io/my-project-doc/"
+
 nav:
   - 首页: index.md
   - 指南:
     - 快速开始: guide/start.md
     - 进阶技巧: guide/advanced.md
   - 关于: about.md
+
+theme:
+  name: material
+  language: zh # 已配置为中文
+  features:
+    - navigation.tabs # 导航标签
+    - navigation.top # 返回顶部按钮
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+  palette:
+    - scheme: default # 日间模式
+      primary: indigo # 主色调
+      accent: indigo # 强调色
+      toggle:
+        icon: material/brightness-7
+        name: 切换至夜间模式
+    - scheme: slate # 夜间模式
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至日间模式
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.tabbed
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  version: 0.1.0
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ximing766
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
