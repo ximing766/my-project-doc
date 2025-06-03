@@ -2,4 +2,4 @@
 
 ## Project layout
 
-Test deploy all 4
+Test deploy all 3
